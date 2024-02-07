@@ -6,7 +6,7 @@ const Testy = () => {
     const { loading, data } = useQuery(VIEW_USERS);
     const users = data?.viewUsers || [];
     return (
-        <div>
+        <div className="bg-orange-300">
             {loading ?
             <div>The users have not been fetched yet! </div>
             : <div>
