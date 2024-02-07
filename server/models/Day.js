@@ -17,13 +17,14 @@ const daySchema = new Schema({
     entry: {
         type: String,
         default: "It's a beautiful day to be alive..."
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }
 },
     {
-        timestamps: {
-            createdAt: 'created_at',
-            updatedAt: 'updated_at'
-        }
+        timestamps: true
     }
 );
 

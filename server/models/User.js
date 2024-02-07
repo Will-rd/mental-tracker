@@ -43,7 +43,11 @@ const userSchema = new Schema({
             ref: "Day"
         }
     ]
-});
+},
+    {
+        timestamps: true
+    }
+);
 
 const User = mongoose.model("User", userSchema, "User");
 module.exports = User

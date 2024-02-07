@@ -11,6 +11,15 @@ const resolvers = {
         addUser: async (_, args) => {
             const user = await User.create(args);
             return user
+        },
+        addDay: async (_, args) => {
+            const day = await Day.create(args);
+            const user = await User.findOneAndUpdate(
+                { _id: args.user },
+                { $push: { days: day._id.toString() } },
+                { new: true }
+            );
+            return day
         }
     }
 };

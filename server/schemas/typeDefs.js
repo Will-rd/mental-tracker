@@ -18,6 +18,7 @@ const typeDefs = gql`
         date: String
         spectrum: Int
         entry: String
+        user: User
     }
 
     type Query {
@@ -26,6 +27,7 @@ const typeDefs = gql`
 
     type Mutation {
         addUser(name: String!, username: String!, password: String!, email: String!): User
+        addDay(date: String, spectrum: Int, entry: String, user: ID!): Day
     }
 `;
 
